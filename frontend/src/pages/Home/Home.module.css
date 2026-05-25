@@ -1,0 +1,36 @@
+.section{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.section h1 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  font-size:80px;
+  color: white; /* Sugestão para garantir visibilidade sobre a imagem */
+}
+.section h3{
+  position: absolute;
+  top:50%;
+  width:100%;
+  z-index:1;
+  color:white;
+}
+
+
+
+.img{
+  width: 100vw;
+  height: 400px;
+  margin-left: calc(-50vw + 50%);
+  object-fit: cover;
+  display: block;
+}
