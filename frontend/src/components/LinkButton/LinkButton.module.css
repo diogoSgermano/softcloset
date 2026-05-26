@@ -1,0 +1,35 @@
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn:focus,
+.btn:active,
+.btn:visited {
+    outline: none; /* Remove a borda azul padrão ao focar/clicar */
+    color: #fff; /* Mantém a cor do texto consistente */
+}
+
+.transparent {
+    background-color: transparent;
+    padding: 0;
+    color: inherit; /* A cor do texto será herdada do pai, ou não será visível se for uma imagem */
+}
+
+.transparent:focus,
+.transparent:active,
+.transparent:visited {
+    outline: none;
+    color: inherit;
+}
