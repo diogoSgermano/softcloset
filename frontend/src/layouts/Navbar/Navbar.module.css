@@ -1,15 +1,53 @@
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1em 0;
-  width: 100%;
+  padding: 1em ;
+  /* Removido o margin: 1em e width: 100% para evitar scroll horizontal indesejado */
+  gap: 1em; 
+}
+
+.logoContainer {
+  flex: 1; /* Ocupa 1 parte do espaço */
+  display: flex;
+  justify-content: flex-start;
+}
+
+.navLinks {
+  flex: 1; /* Ocupa 1 parte do espaço (igual ao logo e spacer) */
+  display: flex; 
+  list-style: none; /* Remove os marcadores de lista (bolinhas/traços) */
+  margin: 0; 
+  padding: 0; 
+  gap: 1em; 
+  align-items:center;
+  justify-content:center; /* Centraliza os itens dentro desta coluna */
+}
+
+.spacer {
+  flex: 1; /* Ocupa 1 parte do espaço para equilibrar o lado direito */
+}
+
+.navbar li {
+  margin: 0; /* O espaçamento agora é controlado pelo 'gap' do ul */
+  background-color: black;
+  padding: 0.5em;
+  border-radius: 10em;
+  border: 2px solid transparent; /* Adiciona uma borda transparente inicialmente */
+  color:white;
+}
+
+.navbar li:hover{
+  background-color: white;
+  color:black;
+  border: 2px solid black;
+  transition: 0.1s;
 }
 
 .logoNavbar {
   width: 150px;
   max-width: 100%;
   height: auto;
+  padding-left:2em;
 }
 
 @media (max-width: 768px) {
