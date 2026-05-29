@@ -1,8 +1,15 @@
-.section{
+.section {
   position: relative;
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  width: 100vw;
+  max-width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
 }
 
 .section h1 {
@@ -14,23 +21,39 @@
   z-index: 1;
   width: 100%;
   text-align: center;
-  font-size:80px;
+  font-size: 80px;
   color: white; /* Sugestão para garantir visibilidade sobre a imagem */
 }
-.section h3{
+.section h2 {
   position: absolute;
-  top:50%;
-  width:100%;
-  z-index:1;
-  color:white;
+  top: 50%;
+  width: 100%;
+  z-index: 1;
+  text-align: center;
+  color: white;
 }
 
 
-
-.img{
+.img {
   width: 100vw;
-  height: 400px;
-  margin-left: calc(-50vw + 50%);
+  width: 100%;
+  max-width: none;
+  height: auto;
+  max-height: 600px;
   object-fit: cover;
   display: block;
+  display: flex;
+  justify-content: center;
+  
+  margin-left: calc(-50vw + 50%);
+}
+
+@media (max-width: 768px) {
+  .section h1 {
+    font-size: 48px;
+  }
+
+  .section h3 {
+    font-size: 18px;
+  }
 }
