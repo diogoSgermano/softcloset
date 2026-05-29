@@ -1,44 +1,49 @@
 .navbar {
   display: flex;
   align-items: center;
-  padding: 1em ;
-  /* Removido o margin: 1em e width: 100% para evitar scroll horizontal indesejado */
-  gap: 1em; 
+  justify-content: space-between;
+  padding: 1em;
+  gap: 1em;
 }
 
 .logoContainer {
-  flex: 1; /* Ocupa 1 parte do espaço */
+  flex: 1;
   display: flex;
   justify-content: flex-start;
+  min-width: 190px;
+}
+
+.desktopNav {
+  display: flex;
+  align-items: center;
+  flex: 3;
+  justify-content: flex-end;
+  gap: 1em;
 }
 
 .navLinks {
-  flex: 1; /* Ocupa 1 parte do espaço (igual ao logo e spacer) */
-  display: flex; 
-  list-style: none; /* Remove os marcadores de lista (bolinhas/traços) */
-  margin: 0; 
-  padding: 0; 
-  gap: 1em; 
-  align-items:center;
-  justify-content:center; /* Centraliza os itens dentro desta coluna */
-}
-
-.spacer {
-  flex: 1; /* Ocupa 1 parte do espaço para equilibrar o lado direito */
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
 }
 
 .navbar li {
-  margin: 0; /* O espaçamento agora é controlado pelo 'gap' do ul */
+  margin: 0;
   background-color: black;
   padding: 0.5em;
   border-radius: 10em;
-  border: 2px solid transparent; /* Adiciona uma borda transparente inicialmente */
-  color:white;
+  border: 2px solid transparent;
+  color: white;
 }
 
-.navbar li:hover{
+.navbar li:hover {
   background-color: white;
-  color:black;
+  color: black;
   border: 2px solid black;
   transition: 0.1s;
 }
@@ -47,11 +52,143 @@
   width: 150px;
   max-width: 100%;
   height: auto;
-  padding-left:2em;
+  padding-left: 2em;
+  margin-right: 1em;
+}
+
+.mobileNav {
+  display: none;
+  align-items: center;
+  gap: 0.75em;
+}
+
+.hamburger {
+  display: inline-flex;
+  position: absolute;
+  right:6em;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 1.8rem;
+  cursor: pointer;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 0.75rem;
+  margin-right: 2em;
+}
+
+.barra_pesquisa {
+  display: flex;
+  align-items: center;
+  background-color: rgb(236, 236, 236);
+  padding: 0.5em 0.75em;
+  border-radius: 10em;
+  margin-right: 1em;
+  max-width: 200px;
+  width: 100%;
+  transition: width 0.25s ease, background-color 0.25s ease;
+}
+
+.searchButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lupa {
+  margin-right: 0.3em;
+  width: 20px;
+  height: auto;
+}
+
+.input {
+  border: none;
+  padding: 0.2em 0.4em;
+  background-color: rgb(236, 236, 236);
+  font-size: 17px;
+  width: 100%;
+  max-width: 150px;
+  transition: width 0.25s ease, opacity 0.25s ease;
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.searchOpen .input {
+  width: 100%;
+  max-width: 150px;
+  opacity: 1;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+.mobileMenuLink {
+  display: block;
+  width: 100%;
+  padding: 0.75em 1em;
+  margin: 0.25em 0;
+  text-align: left;
+  color: inherit;
+  border-radius: 1rem;
+  background-color: rgb(236, 236, 236);
 }
 
 @media (max-width: 768px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .mobileNav {
+    display: flex;
+  }
+
   .logoNavbar {
     width: 120px;
+  }
+
+  .barra_pesquisa {
+    margin-left: 1em;
+    padding: 0.35em 0.5em;
+    width: auto;
+  }
+
+  .input {
+    width: 0;
+    opacity: 0;
+    padding: 0;
+    margin-left: 0;
+    min-width: 0;
+    pointer-events: none;
+  }
+
+  .searchOpen {
+    background-color: rgb(236, 236, 236);
+  }
+
+  .searchOpen .input {
+    width: calc(100vw - 110px);
+    max-width: 120px;
+    min-width: 100px;
+
+    opacity: 1;
+    padding: 0.2em 0.4em;
+    margin-left: 0.4em;
+    pointer-events: auto;
+  }
+
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1em 1em;
   }
 }
