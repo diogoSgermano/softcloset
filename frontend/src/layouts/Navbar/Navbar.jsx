@@ -18,36 +18,39 @@ export default function Navbar() {
 
   return (
     <nav>
+
       <div className={styles.navbar}>
+
         <div className={styles.logoContainer}>
           <LinkButton to="/" variant="transparent">
             <img className={styles.logoNavbar} src={logo} alt="logo SoftCloset" />
           </LinkButton>
         </div>
 
-        <div className={styles.desktopNav}>
-          <ul className={styles.navLinks}>
+        <div className={styles.navLinksContainer}>
+          <ul>
             <li>
-              <LinkButton to="/masculino" variant="transparent">
+              <LinkButton to="/masculino" variant="primary">
                 Masculino
               </LinkButton>
             </li>
             <li>
-              <LinkButton to="/feminino" variant="transparent">
+              <LinkButton to="/feminino" variant="primary">
                 Feminino
               </LinkButton>
             </li>
             <li>
-              <LinkButton to="/ofertas" variant="transparent">
+              <LinkButton to="/ofertas" variant="primary">
                 Ofertas
               </LinkButton>
             </li>
             <li>
-              <LinkButton to="/lancamento" variant="transparent">
+              <LinkButton to="/lancamento" variant="primary">
                 Lançamentos
               </LinkButton>
             </li>
           </ul>
+        </div>  
           <div className={`${styles.barra_pesquisa} ${isSearchOpen ? styles.searchOpen : ''}`}>
             <button
               type="button"
@@ -65,7 +68,7 @@ export default function Navbar() {
               onBlur={() => setIsSearchOpen(false)}
             />
           </div>
-        </div>
+        
 
         <div className={styles.mobileNav}>
           <button
@@ -77,38 +80,22 @@ export default function Navbar() {
           >
             ☰
           </button>
-          <div className={`${styles.barra_pesquisa} ${isSearchOpen ? styles.searchOpen : ''}`}>
-            <button
-              type="button"
-              className={styles.searchButton}
-              aria-label="Abrir busca"
-              onClick={toggleSearch}
-            >
-              <img src={lupa} className={styles.lupa} alt="lupa de pesquisa" />
-            </button>
-            <input
-              className={styles.input}
-              placeholder="Buscar produtos..."
-              aria-label="Buscar produtos"
-              onFocus={() => setIsSearchOpen(true)}
-              onBlur={() => setIsSearchOpen(false)}
-            />
-          </div>
+          
         </div>
       </div>
 
       {isMenuOpen && (
         <div className={styles.mobileMenu}>
-          <LinkButton to="/masculino" variant="transparent" className={styles.mobileMenuLink}>
+          <LinkButton to="/masculino" variant="primaryMobile" >
             Masculino
           </LinkButton>
-          <LinkButton to="/feminino" variant="transparent" className={styles.mobileMenuLink}>
+          <LinkButton to="/feminino" variant="primaryMobile">
             Feminino
           </LinkButton>
-          <LinkButton to="/ofertas" variant="transparent" className={styles.mobileMenuLink}>
+          <LinkButton to="/ofertas" variant="primaryMobile" >
             Ofertas
           </LinkButton>
-          <LinkButton to="/lancamento" variant="transparent" className={styles.mobileMenuLink}>
+          <LinkButton to="/lancamento" variant="primaryMobile" >
             Lançamentos
           </LinkButton>
         </div>
