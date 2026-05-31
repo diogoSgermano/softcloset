@@ -15,10 +15,13 @@
 }
 
 .btn:focus,
-.btn:active,
-.btn:visited {
+.btn:active {
     outline: none; /* Remove a borda azul padrão ao focar/clicar */
-    color: #fff; /* Mantém a cor do texto consistente */
+}
+
+.btn:visited {
+    color: inherit;
+    text-decoration: none;
 }
 
 .transparent {
@@ -26,10 +29,53 @@
     padding: 0;
     color: inherit; /* A cor do texto será herdada do pai, ou não será visível se for uma imagem */
 }
+.primary {
+    border-radius: 10em;
+    background-color: black;
+    color: white !important;
+    text-decoration: none;
+    border: #000 solid 1px;
+    transition: 0.1s;
+    max-width: 100%;
+    border-radius: 10em;
+    overflow: hidden;
+}
 
-.transparent:focus,
+.primaryMobile {
+    border-radius: 10em;
+    background-color: black;
+    color: white !important;
+    text-decoration: none;
+    border: #000 solid 1px;
+    transition: 0.1s;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 10em;
+    overflow: hidden;
+}
+.primary:hover {
+    background-color: #ffffff;
+    border-color: #000000;
+    border:#000 solid 1px;
+    color: rgb(0, 0, 0) !important;
+    transition: 0.1s;
+}
+
+.primaryMobile:hover {
+    background-color: #ffffff;
+    border-color: #000000;
+    border:#000 solid 1px;
+    color: rgb(0, 0, 0) !important;
+    transition: 0.1s;
+
+}
+
+/* .transparent:focus,
+.primary:focus,
 .transparent:active,
-.transparent:visited {
+.primary:active,
+.transparent:visited,
+.primary:visited {
     outline: none;
     color: inherit;
-}
+} */

@@ -1,9 +1,16 @@
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1em;
+  padding: 1em 1em 1em 1em;
   gap: 1em;
+  background-color: #fff;
+  z-index: 1000;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
 }
 
 .logoContainer {
@@ -13,12 +20,13 @@
   min-width: 190px;
 }
 
-.desktopNav {
+.navLinksContainer {
   display: flex;
   align-items: center;
   flex: 3;
   justify-content: flex-end;
   gap: 1em;
+
 }
 
 .navLinks {
@@ -26,26 +34,20 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 1em;
+  gap: 2px;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
+  
 }
+ul{
+  display: flex;
+  gap: 2px;
+  overflow: hidden;
 
-.navbar li {
-  margin: 0;
-  background-color: black;
-  padding: 0.5em;
-  border-radius: 10em;
-  border: 2px solid transparent;
-  color: white;
 }
-
-.navbar li:hover {
-  background-color: white;
-  color: black;
-  border: 2px solid black;
-  transition: 0.1s;
+li {
+  list-style: none !important;
 }
 
 .logoNavbar {
@@ -70,7 +72,6 @@
   justify-content: center;
   background: transparent;
   border: none;
-  color: inherit;
   font-size: 1.8rem;
   cursor: pointer;
   width: 2.8rem;
@@ -85,7 +86,6 @@
   background-color: rgb(236, 236, 236);
   padding: 0.5em 0.75em;
   border-radius: 10em;
-  margin-right: 1em;
   max-width: 200px;
   width: 100%;
   transition: width 0.25s ease, background-color 0.25s ease;
@@ -121,30 +121,32 @@
   outline: none;
   box-shadow: none;
 }
-
 .searchOpen .input {
   width: 100%;
   max-width: 150px;
   opacity: 1;
+  
 }
 
 .mobileMenu {
   display: none;
+  border-radius: 0.75rem;
+  margin:5em 1em 1em 1em;
+  gap:0.5em;
 }
 
 .mobileMenuLink {
   display: block;
   width: 100%;
   padding: 0.75em 1em;
-  margin: 0.25em 0;
+  margin: 2px 0;
   text-align: left;
-  color: inherit;
-  border-radius: 1rem;
-  background-color: rgb(236, 236, 236);
 }
 
+
+
 @media (max-width: 768px) {
-  .desktopNav {
+  .navLinksContainer {
     display: none;
   }
 
@@ -171,9 +173,7 @@
     pointer-events: none;
   }
 
-  .searchOpen {
-    background-color: rgb(236, 236, 236);
-  }
+ 
 
   .searchOpen .input {
     width: calc(100vw - 110px);
@@ -191,4 +191,5 @@
     flex-direction: column;
     padding: 0 1em 1em;
   }
+  
 }
