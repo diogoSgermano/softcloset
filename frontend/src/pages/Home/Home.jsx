@@ -13,6 +13,7 @@ export default function Home() {
         <h2>Encontre as melhores peças para todas as ocasiões</h2>
         <img className={styles.img} src={img_background} alt="foto introdutória" />
       </section>
+      
       <Footer />
     </>
   );
