@@ -1,0 +1,66 @@
+.anuncio {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.imagemWrapper {
+  position: relative;
+}
+
+.tag {
+  background-color: transparetnt;
+}
+.tag.novo{
+    background-color: #1034ff;
+    color: white;
+    padding: 0.25em 0.5em;
+    text-transform: uppercase;
+    padding: 0.25em 0.5em;
+    border-radius: 0.75rem;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+.tag.destaque{
+    background-color: #ff0000;
+    color: white;
+    padding: 0.25em 0.5em;
+    text-transform: uppercase;
+    padding: 0.25em 0.5em;
+    border-radius: 0.75rem;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.imagem {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  display: block;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.titulo {
+  font-size: 1.05rem;
+  margin: 0;
+  line-height: 1.3;
+  color: #111;
+}
+
+.preco {
+  font-size: 1rem;
+  margin: 0;
+  color: #111;
+}
