@@ -17,75 +17,79 @@ export default function Navbar() {
   }
 
   return (
-    <nav>
+    <header>
+      <nav>
 
-      <div className={styles.navbar}>
+        <div className={styles.navbar}>
+          <section>
+            <div className={styles.logoContainer}>
+              <LinkButton to="/" variant="transparent">
+              <img className={styles.logoNavbar} src={logo} alt="logo SoftCloset" />
+              </LinkButton>
+            </div>
+          </section> 
 
-        <div className={styles.logoContainer}>
-          <LinkButton to="/" variant="transparent">
-            <img className={styles.logoNavbar} src={logo} alt="logo SoftCloset" />
-          </LinkButton>
+          <section>
+            <div className={styles.navLinksContainer}>
+              <ul>
+                <li>
+                  <LinkButton to="/masculino" variant="primary">
+                    Masculino
+                  </LinkButton>
+                </li>
+                <li>
+                  <LinkButton to="/feminino" variant="primary">
+                    Feminino
+                  </LinkButton>
+                </li>
+                <li>
+                  <LinkButton to="/ofertas" variant="primary">
+                    Ofertas
+                  </LinkButton>
+                </li>
+                <li>
+                  <LinkButton to="/lancamento" variant="primary">
+                    Lançamentos
+                  </LinkButton>
+                </li>
+              </ul>
+            </div>  
+          </section>
+          <section>
+            <div className={`${styles.barra_pesquisa} ${isSearchOpen ? styles.searchOpen : ''}`}>
+              <button
+                type="button"
+                className={styles.searchButton}
+                aria-label="Abrir busca"
+                onClick={toggleSearch}
+              >
+                <img src={lupa} className={styles.lupa} alt="lupa de pesquisa" />
+              </button>
+              <input
+                className={styles.input}
+                placeholder="Buscar produtos..."
+                aria-label="Buscar produtos"
+                onFocus={() => setIsSearchOpen(true)}
+                onBlur={() => setIsSearchOpen(false)}
+              />
+            </div>
+          </section>
+          <section>
+            <div className={styles.mobileNav}>
+              <button
+                type="button"
+                className={styles.hamburger}
+                aria-label="Abrir menu"
+                aria-expanded={isMenuOpen}
+                onClick={toggleMenu}
+              >
+                ☰
+              </button>  
+            </div>
+         </section>
         </div>
 
-        <div className={styles.navLinksContainer}>
-          <ul>
-            <li>
-              <LinkButton to="/masculino" variant="primary">
-                Masculino
-              </LinkButton>
-            </li>
-            <li>
-              <LinkButton to="/feminino" variant="primary">
-                Feminino
-              </LinkButton>
-            </li>
-            <li>
-              <LinkButton to="/ofertas" variant="primary">
-                Ofertas
-              </LinkButton>
-            </li>
-            <li>
-              <LinkButton to="/lancamento" variant="primary">
-                Lançamentos
-              </LinkButton>
-            </li>
-          </ul>
-        </div>  
-          <div className={`${styles.barra_pesquisa} ${isSearchOpen ? styles.searchOpen : ''}`}>
-            <button
-              type="button"
-              className={styles.searchButton}
-              aria-label="Abrir busca"
-              onClick={toggleSearch}
-            >
-              <img src={lupa} className={styles.lupa} alt="lupa de pesquisa" />
-            </button>
-            <input
-              className={styles.input}
-              placeholder="Buscar produtos..."
-              aria-label="Buscar produtos"
-              onFocus={() => setIsSearchOpen(true)}
-              onBlur={() => setIsSearchOpen(false)}
-            />
-          </div>
-        
-
-        <div className={styles.mobileNav}>
-          <button
-            type="button"
-            className={styles.hamburger}
-            aria-label="Abrir menu"
-            aria-expanded={isMenuOpen}
-            onClick={toggleMenu}
-          >
-            ☰
-          </button>
-          
-        </div>
-      </div>
-
-      {isMenuOpen && (
-        <div className={styles.mobileMenu}>
+        <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}>
           <LinkButton to="/masculino" variant="primaryMobile" >
             Masculino
           </LinkButton>
@@ -99,7 +103,7 @@ export default function Navbar() {
             Lançamentos
           </LinkButton>
         </div>
-      )}
-    </nav>
+      </nav>
+    </header>
   );
 }
