@@ -1,15 +1,28 @@
-import styles from './Anuncio.module.css'
+﻿import styles from './Anuncio.module.css'
 
-export default function Anuncio({categoria, titulo, preco, imagem}) {
+export default function Anuncio({ classificacao, titulo, preco, imagem }) {
+  const classificacaoNormalizada = classificacao?.toString().toLowerCase();
+  const showTag = classificacaoNormalizada === 'novo' || classificacaoNormalizada === 'destaque';
+  const classificacaoClasse = classificacaoNormalizada === 'novo'
+    ? styles.novo
+    : classificacaoNormalizada === 'destaque'
+    ? styles.destaque
+    : styles.normal;
+  const label = classificacaoNormalizada === 'novo'
+    ? 'Novo'
+    : classificacaoNormalizada === 'destaque'
+    ? 'Destaque'
+    : classificacao;
+
   return (
     <div className={styles.anuncio}>
       <div className={styles.imagemWrapper}>
         <img src={imagem} className={styles.imagem} alt={titulo} />
-        <span
-          className={`${styles.tag} ${categoria === 'Novo' ? styles.novo : categoria === 'Destaque' ? styles.destaque : ''}`}
-        >
-          {categoria}
-        </span>
+        {showTag && (
+          <span className={`${styles.classificacao} ${classificacaoClasse}`}>
+            {label}
+          </span>
+        )}
       </div>
       <div className={styles.info}>
         <h2 className={styles.titulo}>{titulo}</h2>

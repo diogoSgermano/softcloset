@@ -36,7 +36,7 @@ public enum ProdutoTamanho {
         return valor;
     }
 
-    // Mapa para busca rápida
+
     private static final Map<String, ProdutoTamanho> MAPA_TAMANHOS =
             Arrays.stream(values())
                     .collect(Collectors.toMap(

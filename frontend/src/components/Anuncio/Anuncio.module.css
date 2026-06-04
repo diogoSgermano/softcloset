@@ -6,41 +6,39 @@
 
 .imagemWrapper {
   position: relative;
+  height: 320px;
+  overflow: hidden;
 }
 
-.tag {
-  background-color: transparetnt;
+.classificacao {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0.35em 0.65em;
+  text-transform: uppercase;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
 }
-.tag.novo{
-    background-color: #1034ff;
-    color: white;
-    padding: 0.25em 0.5em;
-    text-transform: uppercase;
-    padding: 0.25em 0.5em;
-    border-radius: 0.75rem;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 0.75rem;
-    font-weight: 700;
+
+.classificacao.novo {
+  background-color: #000;
+  color: #fff;
 }
-.tag.destaque{
-    background-color: #ff0000;
-    color: white;
-    padding: 0.25em 0.5em;
-    text-transform: uppercase;
-    padding: 0.25em 0.5em;
-    border-radius: 0.75rem;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 0.75rem;
-    font-weight: 700;
+
+.classificacao.destaque {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.classificacao.normal {
+  display: none;
 }
 
 .imagem {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   border-radius: 0.75rem;
   display: block;
