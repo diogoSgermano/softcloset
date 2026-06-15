@@ -2,15 +2,15 @@ import React from 'react';
 import styles from './Destaques.module.css';
 import Anuncio from '../Anuncio/Anuncio';
 import useProdutos from '../../hooks/useProdutos';
-import vestido_vermelho from '../../assets/images/vestido-vermelho.jpg';
+import vestidoVermelho from '../../assets/images/vestido-vermelho.jpg';
 
-const produtoExemplo = {
-  idProduto: 0,
-  nome: 'Vestido Vermelho',
-  classificacao: 'Novo',
-  preco: 199.9,
-  imagemUrl: vestido_vermelho,
-};
+// const produtoExemplo = {
+//   idProduto: 0,
+//   nome: 'Vestido Vermelho',
+//   classificacao: 'Novo',
+//   preco: 199.9,
+//   imagemUrl: vestidoVermelho,
+// };
 
 function formatPreco(preco) {
   if (typeof preco === 'number') {
@@ -22,11 +22,11 @@ function formatPreco(preco) {
 export default function Destaques() {
   const { produtos, loading, error } = useProdutos();
   // Mostrar todos os produtos retornados pela API; usar exemplo quando vazio
-  const produtosExibidos = produtos.length > 0 ? produtos : [produtoExemplo];
+  const produtosExibidos = produtos.length > 0 ? produtos : [];
 
   return (
-    <section>
-      <h1 className={styles.title}>Produtos em destaque</h1>
+    <section id="destaques">
+      <h1 className={styles.title}>Produtos</h1>
       {loading && <p className={styles.status}>Carregando produtos...</p>}
       {error && <p className={styles.statusError}>Erro ao carregar: {error}</p>}
       <div className={styles.destaques}>
@@ -36,7 +36,7 @@ export default function Destaques() {
             classificacao={produto.classificacao || produto.categoria || 'Normal'}
             titulo={produto.nome}
             preco={formatPreco(produto.preco)}
-            imagem={produto.imagemUrl || vestido_vermelho}
+            imagem={produto.imagemUrl}
           />
         ))}
       </div>

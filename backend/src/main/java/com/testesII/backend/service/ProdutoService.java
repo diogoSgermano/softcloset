@@ -1,12 +1,15 @@
 package com.testesII.backend.service;
 
-import com.testesII.backend.entity.Produto;
-import com.testesII.backend.repository.ProdutoRepository;
+import java.util.List;
+import java.util.Optional; // Importar Classificacao
+
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Optional;
+import com.testesII.backend.entity.Produto;
+import com.testesII.backend.enums.Classificacao;
+import com.testesII.backend.repository.ProdutoRepository;
 
 @Service
 public class ProdutoService {
@@ -16,6 +19,7 @@ public class ProdutoService {
         this.produtoRepository=produtoRepository;
     }
 
+    @Cacheable("produtos")
     public List<Produto> listarTodos(){
         return produtoRepository.findAll();
     }
@@ -52,7 +56,17 @@ public class ProdutoService {
                     // For simplicity, I'm not directly updating the list of ProdutoVariante here.
                     // If you need to update variants, a more sophisticated approach is required.
                     return produtoRepository.save(produtoExistente);
+
                 })
                 .orElseThrow(() -> new RuntimeException("Produto não encontrado com o ID: " + id));
+    }
+
+    // Método ajustado para receber o enum Classificacao diretamente
+    public List<Produto> filtrarPorClassificacao(Classificacao classificacao){
+        return produtoRepository.findByClassificacao(classificacao);
+    }
+
+    public List<Produto> buscarPorNome(String nome) {
+        return produtoRepository.findByNomeContainingIgnoreCase(nome);
     }
 }

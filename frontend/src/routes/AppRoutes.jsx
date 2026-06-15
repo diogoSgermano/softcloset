@@ -1,10 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home/Home';
-import Masculino from '../pages/Masculino/Masculino';
-import Feminino from '../pages/Feminino/Feminino';
-import Ofertas from '../pages/Ofertas/Ofertas.jsx';
-import Lancamento from '../pages/Lancamento/Lancamento.jsx'
+import Admin from '../pages/Admin/Admin';
+  
 
 
 export default function AppRoutes() {
@@ -12,11 +10,7 @@ export default function AppRoutes() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/masculino" element={<Masculino />} />
-        <Route path="/feminino" element={<Feminino />} />
-        <Route path="/ofertas" element={<Ofertas />} />
-        <Route path="/lancamento" element={<Lancamento />} />
-        
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </Router>
   );
