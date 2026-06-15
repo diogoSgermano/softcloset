@@ -7,6 +7,7 @@ Pré-requisitos:
 
 - Java 21
 - Maven
+- MySQL
 - Node.js + npm
 
 ## Criar banco de dados MySQL `softcloset`
