@@ -78,11 +78,11 @@ function mostrarTodosProdutos() {
                     Todos os produtos
                   </LinkButton>
                 </li>
-                <li>
+                {/* <li>
                   <LinkButton to="/admin" variant="primary">
                     Gerenciar produtos
                   </LinkButton>
-                </li>
+                </li> */}
                 <li>
                   <LinkButton to="/" onClick={filtrarPorDestaques} variant="primary">
                     Destaques da semana

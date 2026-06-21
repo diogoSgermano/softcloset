@@ -22,12 +22,16 @@ public enum Categoria {
         return descricao;
     }
 
-    private static final Map<String, Categoria> MAPA_CATEGORIAS =
-            Arrays.stream(values())
-                    .collect(Collectors.toMap(
-                            c -> c.getDescricao().toUpperCase(),
-                            Function.identity()
-                    ));
+    private static final Map<String, Categoria> MAPA_CATEGORIAS;
+
+    static {
+        java.util.Map<String, Categoria> mapa = new java.util.HashMap<>();
+        for (Categoria c : values()) {
+            mapa.put(c.getDescricao().toUpperCase(), c);
+            mapa.put(c.name(), c);
+        }
+        MAPA_CATEGORIAS = java.util.Collections.unmodifiableMap(mapa);
+    }
 
     public static Categoria fromDescricao(String descricao) {
 
