@@ -17,7 +17,8 @@ Cole os comandos abaixo no terminal (substitua senhas e usuários conforme neces
 ```bash
 # cria apenas o banco
 mysql -u root -p -h 127.0.0.1 -P 3306 -e "CREATE DATABASE softcloset CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
-
+```
+```bash
 # cria banco + usuário (substitua SENHA_AQUI)
 mysql -u root -p -h 127.0.0.1 -P 3306 -e "CREATE DATABASE softcloset CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; CREATE USER 'softuser'@'localhost' IDENTIFIED BY 'SENHA_AQUI'; GRANT ALL PRIVILEGES ON softcloset.* TO 'softuser'@'localhost'; FLUSH PRIVILEGES;"
 ```
